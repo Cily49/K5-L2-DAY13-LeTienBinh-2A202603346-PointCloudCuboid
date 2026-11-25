@@ -90,7 +90,7 @@ Cảnh báo giữ nguyên và lý do: s05f34 idx 5 (cao 2,32 m): xe cao, nhiều
 ## 6. Ý nghĩa của nhãn, cách dùng AI và điều còn chưa chắc
 (a) Model phát hiện vật 3D phải dự đoán vị trí và kích thước thật của vật để xe tính khoảng cách an toàn và lập đường đi. Nhãn đo bằng mét trong hệ tọa độ LiDAR không đổi theo góc nhìn, còn pixel thì co giãn theo khoảng cách và camera, nên không dùng làm mục tiêu 3D được. Vật thưa điểm cần quy tắc riêng (ngưỡng 15–20% thể tích, LOW_VISIBILITY): nếu người gán nhãn đoán bừa, model sẽ học cách "tưởng tượng" ra vật không có bằng chứng; nếu bỏ sót tuỳ tiện, model học cách bỏ qua vật xa thật. Quy tắc thống nhất giúp nhãn nhất quán giữa các người gán.
 
-(b) Dùng AI (được mentor đồng ý):
+(b) Dùng AI:
 - Công cụ: Claude Code (trợ lý AI trong VS Code).
 - Câu hỏi chính: cài môi trường, hệ trục VF và hướng xe ego, cách thao tác CVAT 3D; soát bảng A và phiếu tự kiểm để chỉ ra cuboid nghi lỗi; đặt tên và đóng gói ảnh; soạn nháp báo cáo từ bảng A và phiếu tự kiểm.
 - Cách dùng kết quả: tôi tự vẽ và sửa cuboid trên CVAT, tự chụp ảnh; số trong báo cáo lấy từ bảng A, phiếu tự kiểm do `sync` sinh; tôi đã đối chiếu và chỉnh lại các mục quan sát theo ảnh của mình. AI không xem ảnh camera hay ảnh chụp màn hình.
